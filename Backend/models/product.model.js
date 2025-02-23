@@ -51,10 +51,10 @@ const ProductSchema = mongoose.Schema({
         star: {Number},
         name: {type: String},
         comment: { type: String},
-        postedBy: {type: String}
-    }
-]
+        postedBy: {type: String},
+    },
+],
 });
-
+ProductSchema.index({"$**":"text"})
 const Product = mongoose.model("Product", ProductSchema);
 export default Product;
