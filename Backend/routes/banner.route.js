@@ -5,7 +5,7 @@ import {
     deleteBanner, 
     getAllBanners, 
     getRandomBanner, 
-} from "../controller/banner.controller";
+} from "../controller/banner.controller.js";
 
 
 // CREATE BANNER ROUTE

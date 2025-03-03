@@ -4,12 +4,12 @@ import asyncHandler from "express-async-handler";
 // CREATE PRODUCT
 const createProduct = asyncHandler(async(req, res) =>{
 
-    const newProduct = await Product(requestAnimationFrame.body);
-    const product = newProduct.save();
+    const newProduct = await Product(req.body);
+    const product = await newProduct.save();
     if(product){
         res.status(201).json(product);
     }else{
-        resizeBy.status(400);
+        res.status(400);
         throw new Error("Product was not created");
     }
 });
@@ -62,7 +62,7 @@ const getAllproducts = asyncHandler(async(req,res) =>{
     const qCategory = req.query.category;
     const qsearch = req.query.search;
 
-    let product;
+    let products;
 
     if(qNew){
         products = await Product.find().sort({createdAt: -1});
@@ -77,7 +77,8 @@ const getAllproducts = asyncHandler(async(req,res) =>{
             }
         })
     }else{
-        products = await Product.find().sor({createdAt: -1});
+        products = await Product.find().sort({createdAt: -1});
+        res.status(200).json(products);
     }
 });
 
