@@ -8,7 +8,7 @@ function createTransporter(config){
 }
 let configurations = {
     service: "gmail",
-    host: "stmt.gmail.com",
+    host: "stmtp.gmail.com",
     port: 587,
     requireTls: true,
     auth:{
