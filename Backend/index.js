@@ -1,6 +1,7 @@
 import app from "./app.js";
 import dotenv from "dotenv";
 import dbConnection from "./util/db.js";
+
 dotenv.config();
 //SERVER
 const PORT = process.env.PORT || 5000;
